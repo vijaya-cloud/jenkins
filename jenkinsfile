@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git branch: 'main', credentialsId: '03c29fbf-49d1-45da-82e2-a1cb0ea9a23b', url: 'https://github.com/riyaz122/jenkins-repo-demo'
+            }
+        }
+	stage("Maven Build"){
+	    steps{
+	       sh "mvn clean package"
+	    }
+	}	
+    }
+}

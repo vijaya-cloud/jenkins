@@ -6,10 +6,7 @@ pipeline{
                git branch: 'main', credentialsId: 'vijayagit', url: 'https://github.com/vijaya-cloud/jenkins.git'
             }
         }
-	stage("Maven Build"){
-	    steps{
-	       sh "mvn clean package"
-	    }
+	
 	}	
     }
-}
+
